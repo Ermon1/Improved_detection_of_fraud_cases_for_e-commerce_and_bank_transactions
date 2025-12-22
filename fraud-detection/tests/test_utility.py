@@ -1,7 +1,7 @@
 
 from src.utils.logger import get_logger
 
-logger = get_logger('test_log')
+logger = get_logger('test_kk_log')
 
 logger.debug("Debugging message")
 logger.info("Information message")
