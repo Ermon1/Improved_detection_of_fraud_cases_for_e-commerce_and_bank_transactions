@@ -30,12 +30,3 @@ class CustomException(Exception):
 
     def __repr__(self):
         return f"{self.__class__.__name__}({repr(self.error_message)})"
-
-try:
-    5 / 0
-except Exception as e:
-    raise  CustomException(e)
-
-    # Option 2: Log structured error
-    # import logging
-    # logging.error(CustomException(e))
