@@ -1,0 +1,15 @@
+fraud_data_csv:
+  path: data/raw/Fraud_Data.csv
+  description: "E-commerce transaction data with user/device/browser info"
+  target_column: class
+
+# IP to country mapping
+ip_to_country_csv:
+  path: data/raw/IpAddress_to_Country.csv
+  description: "Mapping from IP address ranges to country names"
+
+# Bank credit transactions
+credit_card_csv:
+  path: data/raw/creditcard.csv
+  description: "Bank credit card transactions dataset"
+  target_column: Class
