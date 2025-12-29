@@ -31,3 +31,4 @@ build/
 *.egg
 *.egg-info/
 pip-wheel-metadata/
+reports/
