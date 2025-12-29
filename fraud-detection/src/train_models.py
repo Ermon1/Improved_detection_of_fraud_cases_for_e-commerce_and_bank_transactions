@@ -42,17 +42,17 @@ def train_and_evaluate(df):
     logger.info(f"Train shape: {X_train.shape}, Test shape: {X_test.shape}")
     logger.info(f"Class distribution in Train: {y_train.value_counts(normalize=True).to_dict()}")
     
-    # 2. Define Models
+    # 2. Define Models (Simplified for faster execution)
     models = {
-        'Logistic Regression': LogisticRegression(max_iter=1000, random_state=42),
-        'Random Forest': RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42, n_jobs=-1),
-        'XGBoost': XGBClassifier(use_label_encoder=False, eval_metric='logloss', random_state=42, n_jobs=-1)
+        'Logistic Regression': LogisticRegression(max_iter=100, random_state=42),
+        'Random Forest': RandomForestClassifier(n_estimators=10, max_depth=5, random_state=42, n_jobs=-1),
+        'XGBoost': XGBClassifier(use_label_encoder=False, eval_metric='logloss', n_estimators=10, max_depth=3, random_state=42, n_jobs=-1)
     }
     
     results = {}
     
     # K-Fold CV
-    skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+    skf = StratifiedKFold(n_splits=2, shuffle=True, random_state=42)
     
     for name, model in models.items():
         logger.info(f"Evaluating {name}...")
